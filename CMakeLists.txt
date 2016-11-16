@@ -103,6 +103,8 @@ add_subdirectory( ym-bnet )
 add_subdirectory( ym-verilog )
 add_subdirectory( ym-mvn)
 
+add_subdirectory( doxygen-src )
+
 
 # ===================================================================
 #  ソースファイルの設定
