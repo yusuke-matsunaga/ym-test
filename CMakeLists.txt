@@ -37,16 +37,6 @@ include( UseCython )
 
 find_package( Gperftools )
 
-if ( UNIX )
-  set ( YM_UNIX 1 )
-endif ( UNIX )
-if ( APPLE )
-  set ( YM_APPLE 1 )
-endif ( APPLE )
-if ( WIN32 )
-  set ( YM_WIN32 1 )
-endif ( WIN32 )
-
 include ( YmUtils )
 
 ym_init ( "USE_POPT" )
