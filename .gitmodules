@@ -19,3 +19,6 @@
 [submodule "ym-verilog"]
 	path = ym-verilog
 	url = git@github.com:yusuke-matsunaga/ym-verilog.git
+[submodule "ym-bfo"]
+	path = ym-bfo
+	url = git@github.com:yusuke-matsunaga/ym-bfo.git

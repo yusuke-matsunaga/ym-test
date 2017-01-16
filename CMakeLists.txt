@@ -65,6 +65,7 @@ enable_testing()
 # ===================================================================
 include_directories(
   ${PROJECT_SOURCE_DIR}/include
+  ${PROJECT_SOURCE_DIR}/ym-bfo/include
   ${PROJECT_SOURCE_DIR}/ym-bnet/include
   ${PROJECT_SOURCE_DIR}/ym-cell/include
   ${PROJECT_SOURCE_DIR}/ym-common/include
@@ -87,6 +88,7 @@ include_directories(
 
 add_subdirectory( ym-common )
 add_subdirectory( ym-logic )
+add_subdirectory( ym-bfo )
 add_subdirectory( ym-sat )
 add_subdirectory( ym-cell )
 add_subdirectory( ym-bnet )
