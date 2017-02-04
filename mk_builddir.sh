@@ -67,7 +67,11 @@ test -d ${builddir} || mkdir -p ${builddir}
 boot="boot.sh"
 ${SED} -e s!___SRC_DIR___!${srcdir}! \
      -e s!___INSTALL_DIR___!${installdir}! \
-    ${srcdir}/etc/${boot}.in > $builddir/${boot}
+    ${srcdir}/ym-common/etc/${boot}.in > ${builddir}/${boot}
 chmod +x ${builddir}/${boot}
+
+# boot-opt.sh ファイルをコピーする．
+optfile="boot-opt.sh"
+cp ${srcdir}/ym-common/etc/${optfile} ${builddir}/${optfile}
 
 echo "Set up completed"
