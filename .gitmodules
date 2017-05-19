@@ -22,3 +22,6 @@
 [submodule "ym-bfo"]
 	path = ym-bfo
 	url = git@github.com:yusuke-matsunaga/ym-bfo.git
+[submodule "ym-base"]
+	path = ym-base
+	url = git@github.com:yusuke-matsunaga/ym-base.git
