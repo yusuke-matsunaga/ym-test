@@ -32,6 +32,7 @@
 set ( YM_DOXY_SRCS )
 foreach ( dir
     "${CMAKE_CURRENT_SOURCE_DIR}"
+    "${PROJECT_SOURCE_DIR}/ym-base/include"
     "${PROJECT_SOURCE_DIR}/ym-bnet/include"
     "${PROJECT_SOURCE_DIR}/ym-cell/include"
     "${PROJECT_SOURCE_DIR}/ym-common/include"
