@@ -26,6 +26,7 @@ list ( APPEND CMAKE_MODULE_PATH
   "${PROJECT_SOURCE_DIR}/ym-common/cmake"
   )
 
+# doxygen の検査
 include( FindDoxygen )
 
 # Python のバージョン指定
@@ -33,12 +34,17 @@ set( Python_ADDITIONAL_VERSIONS 3.6 3.5 3.4 3.3 3.2 3.1 )
 include( FindPythonInterp )
 include( FindPythonLibs )
 
+# cython の検査
 include( UseCython )
 
+# google-perftools の検査
 find_package( Gperftools )
 
+# 自前のパッケージをインクルード
 include ( YmUtils )
 
+# よく使ういくつかのパッケージの検査を行う．
+# このオプションでは popt の検査も行う．
 ym_init ( "USE_POPT" )
 
 
@@ -51,7 +57,7 @@ ym_use_gtest ()
 # ===================================================================
 # CTest モジュールの読み込み
 # ===================================================================
-include (CTest)
+include ( CTest )
 enable_testing()
 
 
@@ -64,7 +70,6 @@ enable_testing()
 # インクルードパスの設定
 # ===================================================================
 include_directories(
-  ${PROJECT_SOURCE_DIR}/include
   ${PROJECT_SOURCE_DIR}/ym-base/include
   ${PROJECT_SOURCE_DIR}/ym-bfo/include
   ${PROJECT_SOURCE_DIR}/ym-bnet/include
