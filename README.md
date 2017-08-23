@@ -17,6 +17,8 @@ ymtools のテスト用パッケージ．
 
 * ym-base: 基本的なデータ構造・ユーティリティ
 
+  [概要(README.md)](https://github.com/yusuke-matsunaga/ym-base/blob/master/README.md)
+
 * ym-logic: 論理式・論理関数処理
 
 * ym-sat: SATソルバ
