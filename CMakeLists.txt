@@ -79,6 +79,7 @@ include_directories(
   ${PROJECT_SOURCE_DIR}/ym-mvn/include
   ${PROJECT_SOURCE_DIR}/ym-sat/include
   ${PROJECT_SOURCE_DIR}/ym-verilog/include
+  ${PROJECT_SOURCE_DIR}/ym-combopt/include
   ${PROJECT_BINARY_DIR}
   )
 
@@ -101,6 +102,7 @@ add_subdirectory( ym-cell )
 add_subdirectory( ym-bnet )
 add_subdirectory( ym-verilog )
 add_subdirectory( ym-mvn)
+add_subdirectory( ym-combopt )
 
 add_subdirectory( doxygen-src )
 
