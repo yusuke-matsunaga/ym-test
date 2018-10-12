@@ -11,7 +11,7 @@ set (CMAKE_CXX_STANDARD 14)
 # プロジェクト名，バージョンの設定
 # ===================================================================
 
-set ( YM_INSTALL_LIBDIR "lib/ym-test" )
+set ( CMAKE_INSTALL_PREFIX "${PROJECT_BINARY_DIR}/stage" )
 
 
 # ===================================================================
@@ -26,26 +26,16 @@ list ( APPEND CMAKE_MODULE_PATH
   "${PROJECT_SOURCE_DIR}/ym-common/cmake"
   )
 
-# doxygen の検査
-include( FindDoxygen )
-
-# Python のバージョン指定
-set( Python_ADDITIONAL_VERSIONS 3.7 3.6 3.5 3.4 3.3 3.2 3.1 )
-include( FindPythonInterp )
-include( FindPythonLibs )
-
-# cython の検査
-include( UseCython )
-
-# google-perftools の検査
-find_package( Gperftools )
-
 # 自前のパッケージをインクルード
 include ( YmUtils )
 
 # よく使ういくつかのパッケージの検査を行う．
 # このオプションでは popt の検査も行う．
 ym_init ( "USE_POPT" )
+ym_init_python ()
+ym_init_cython ()
+ym_init_gperftools ()
+ym_init_ctest ()
 
 
 # ===================================================================
@@ -55,34 +45,39 @@ ym_use_gtest ()
 
 
 # ===================================================================
-# CTest モジュールの読み込み
-# ===================================================================
-include ( CTest )
-enable_testing()
-
-
-# ===================================================================
 # ヘッダファイルの生成
 # ===================================================================
+
+# ===================================================================
+# サブモジュールのリスト
+# ===================================================================
+
+set ( YM_SUBMODULE_LIST
+  "ym-base"
+  "ym-bfo"
+  "ym-bnet"
+  "ym-cell"
+  "ym-combopt"
+  "ym-common"
+  "ym-fraig"
+  "ym-logic"
+  "ym-mvn"
+  "ym-sat"
+  "ym-verilog"
+  )
 
 
 # ===================================================================
 # インクルードパスの設定
 # ===================================================================
-include_directories(
-  ${PROJECT_SOURCE_DIR}/ym-base/include
-  ${PROJECT_SOURCE_DIR}/ym-bfo/include
-  ${PROJECT_SOURCE_DIR}/ym-bnet/include
-  ${PROJECT_SOURCE_DIR}/ym-cell/include
-  ${PROJECT_SOURCE_DIR}/ym-common/include
-  ${PROJECT_SOURCE_DIR}/ym-fraig/include
-  ${PROJECT_SOURCE_DIR}/ym-logic/include
-  ${PROJECT_SOURCE_DIR}/ym-mvn/include
-  ${PROJECT_SOURCE_DIR}/ym-sat/include
-  ${PROJECT_SOURCE_DIR}/ym-verilog/include
-  ${PROJECT_SOURCE_DIR}/ym-combopt/include
-  ${PROJECT_BINARY_DIR}
-  )
+
+set ( YM_INCLUDE_DIRS )
+foreach ( dir ${YM_SUBMODULE_LIST} )
+  list ( APPEND YM_INCLUDE_DIRS "${PROJECT_SOURCE_DIR}/${dir}/include" )
+endforeach ()
+list ( APPEND YM_INCLUDE_DIRS "${PROJECT_BINARY_DIR}" )
+
+include_directories( ${YM_INCLUDE_DIRS} )
 
 
 # ===================================================================
@@ -94,19 +89,9 @@ include_directories(
 # サブディレクトリの設定
 # ===================================================================
 
-add_subdirectory( ym-common )
-add_subdirectory( ym-base )
-add_subdirectory( ym-logic )
-add_subdirectory( ym-bfo )
-add_subdirectory( ym-sat )
-add_subdirectory( ym-cell )
-add_subdirectory( ym-bnet )
-add_subdirectory( ym-fraig )
-add_subdirectory( ym-verilog )
-add_subdirectory( ym-mvn)
-add_subdirectory( ym-combopt )
-
-add_subdirectory( doxygen-src )
+foreach ( dir ${YM_SUBMODULE_LIST} )
+  add_subdirectory ( ${dir} )
+endforeach ()
 
 
 # ===================================================================
