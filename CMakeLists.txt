@@ -30,8 +30,8 @@ list ( APPEND CMAKE_MODULE_PATH
 include ( YmUtils )
 
 # よく使ういくつかのパッケージの検査を行う．
-# このオプションでは popt の検査も行う．
-ym_init ( "USE_POPT" )
+# このオプションでは bzip2, lzma, zlib, popt の検査も行う．
+ym_init ( "USE_BZIP2" "USE_LZMA" "USE_ZLIB" "USE_POPT" )
 ym_init_python ()
 ym_init_cython ()
 ym_init_gperftools ()
