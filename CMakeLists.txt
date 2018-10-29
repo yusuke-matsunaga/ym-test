@@ -71,13 +71,9 @@ set ( YM_SUBMODULE_LIST
 # インクルードパスの設定
 # ===================================================================
 
-set ( YM_INCLUDE_DIRS )
-foreach ( dir ${YM_SUBMODULE_LIST} )
-  list ( APPEND YM_INCLUDE_DIRS "${PROJECT_SOURCE_DIR}/${dir}/include" )
-endforeach ()
-list ( APPEND YM_INCLUDE_DIRS "${PROJECT_BINARY_DIR}" )
-
-include_directories( ${YM_INCLUDE_DIRS} )
+include_directories(
+  ${PROJECT_BINARY_DIR}
+  )
 
 
 # ===================================================================
