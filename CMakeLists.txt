@@ -54,7 +54,6 @@ ym_use_gtest ()
 
 set ( YM_SUBMODULE_LIST
   "ym-base"
-  "ym-bfo"
   "ym-bnet"
   "ym-cell"
   "ym-combopt"
