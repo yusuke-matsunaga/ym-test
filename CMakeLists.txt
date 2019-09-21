@@ -10,6 +10,10 @@ set (CMAKE_CXX_STANDARD 14)
 # ===================================================================
 # プロジェクト名，バージョンの設定
 # ===================================================================
+set ( YM_VERSION_MAJOR 1 )
+set ( YM_VERSION_MINOR 0 )
+set ( YM_VERSION ${YM_VERSION_MAJOR}.${YM_VERSION_MINOR} )
+project ( ym-test VERSION "${YM_VERSION}" )
 
 set ( CMAKE_INSTALL_PREFIX "${PROJECT_BINARY_DIR}/stage" )
 
