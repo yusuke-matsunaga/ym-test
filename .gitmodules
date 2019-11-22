@@ -31,3 +31,9 @@
 [submodule "ym-fraig"]
 	path = ym-fraig
 	url = git@github.com:yusuke-matsunaga/ym-fraig.git
+[submodule "ym-alloc"]
+	path = ym-alloc
+	url = git@github.com:yusuke-matsunaga/ym-alloc.git
+[submodule "ym-msg"]
+	path = ym-msg
+	url = git@github.com:yusuke-matsunaga/ym-msg.git

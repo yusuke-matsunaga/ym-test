@@ -57,6 +57,7 @@ ym_use_gtest ()
 # ===================================================================
 
 set ( YM_SUBMODULE_LIST
+  "ym-alloc"
   "ym-base"
   "ym-bnet"
   "ym-cell"
@@ -64,6 +65,7 @@ set ( YM_SUBMODULE_LIST
   "ym-common"
   "ym-fraig"
   "ym-logic"
+  "ym-msg"
   "ym-mvn"
   "ym-sat"
   "ym-verilog"
