@@ -37,3 +37,6 @@
 [submodule "ym-msg"]
 	path = ym-msg
 	url = git@github.com:yusuke-matsunaga/ym-msg.git
+[submodule "ym-graph"]
+	path = ym-graph
+	url = git@github.com:yusuke-matsunaga/ym-graph.git

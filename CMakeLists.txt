@@ -64,6 +64,7 @@ set ( YM_SUBMODULE_LIST
   "ym-combopt"
   "ym-common"
   "ym-fraig"
+  "ym-graph"
   "ym-logic"
   "ym-msg"
   "ym-mvn"
