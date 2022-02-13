@@ -61,6 +61,7 @@ set ( YM_SUBMODULE_LIST
   "ym-base"
   "ym-bnet"
   "ym-cell"
+  "ym-codec"
   "ym-combopt"
   "ym-common"
   "ym-fraig"

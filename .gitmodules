@@ -40,3 +40,6 @@
 [submodule "ym-graph"]
 	path = ym-graph
 	url = git@github.com:yusuke-matsunaga/ym-graph.git
+[submodule "ym-codec"]
+	path = ym-codec
+	url = git@github.com:yusuke-matsunaga/ym-codec.git
