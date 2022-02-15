@@ -59,6 +59,7 @@ ym_use_gtest ()
 set ( YM_SUBMODULE_LIST
   "ym-alloc"
   "ym-base"
+  "ym-bfo"
   "ym-bnet"
   "ym-cell"
   "ym-codec"
