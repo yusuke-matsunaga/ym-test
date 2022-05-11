@@ -1,7 +1,7 @@
 # ===================================================================
 # CMAKE のおまじない
 # ===================================================================
-cmake_minimum_required (VERSION 3.12)
+cmake_minimum_required (VERSION 3.14)
 
 
 # C++14 の指定
@@ -30,6 +30,7 @@ list ( APPEND CMAKE_MODULE_PATH
   "${PROJECT_SOURCE_DIR}/ym-common/cmake"
   )
 
+
 # 自前のパッケージをインクルード
 include ( YmUtils )
 
@@ -43,9 +44,12 @@ ym_init_ctest ()
 
 
 # ===================================================================
-# google-test は内蔵のものを使う．
+# google-test を有効にする．
 # ===================================================================
-ym_use_gtest ()
+ym_use_gtest (
+#  GIT_REPOSITORY https://github.com/google/googletest.git
+#  GIT_TAG release-1.11.0
+  )
 
 
 # ===================================================================
