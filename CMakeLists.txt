@@ -69,7 +69,6 @@ set ( YM_SUBMODULE_LIST
   "ym-codec"
   "ym-combopt"
   "ym-common"
-  "ym-fraig"
   "ym-graph"
   "ym-logic"
   "ym-msg"

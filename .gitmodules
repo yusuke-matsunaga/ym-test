@@ -28,9 +28,6 @@
 [submodule "ym-combopt"]
 	path = ym-combopt
 	url = git@github.com:yusuke-matsunaga/ym-combopt.git
-[submodule "ym-fraig"]
-	path = ym-fraig
-	url = git@github.com:yusuke-matsunaga/ym-fraig.git
 [submodule "ym-alloc"]
 	path = ym-alloc
 	url = git@github.com:yusuke-matsunaga/ym-alloc.git
